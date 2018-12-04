@@ -14,4 +14,4 @@ plot_slopes(sloper_exdat,
             xname = "Average Target Strength Rating",
             groupfactor = "ratersex",
             gflevels = c("Men", "Women"),
-            linear = T)
+            linear = F)
