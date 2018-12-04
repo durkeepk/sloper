@@ -5,8 +5,9 @@ Version: 0.1.0
 Author: c(person("Patrick K.", "Durkee", role = c("aut", "cre"),
     email = "durkeepk@gmail.com")
 Maintainer: Patrick K. Durkee <durkeepk@gmail.com>
-Description: For now, it just computes a mixed model with random slopes/intercepts and extract slopes (and intercepts) for further use. 
-    It might be cool if it could also be used to efficiently plot individual slopes and to maybe even do those additional analyses on the slopes (e.g. predict slope variation). 
+Description: For now, this package has functions for easily computing and visualizing mixed models.
+    One function specifies a mixed model for lmer with random slopes/intercepts and extracts slopes (and intercepts) for further use. 
+    It has a separate function to efficiently make a pretty plot of individual slopes and the overall slope. 
     Don't know what else it might do yet...
 License: CC0
 Encoding: UTF-8
