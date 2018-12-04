@@ -25,7 +25,7 @@ plot_slopes(data = NULL, r_id = "r_id", rating = "rating",
 
 \item{gflevels}{vector of custom labels for factor levels}
 
-\item{linear}{logical indicating whether to plot linear function or nonlinear}
+\item{linear}{logical argument indicating whether to plot linear function or nonlinear}
 }
 \value{
 plot of the individual slopes and overall slope
