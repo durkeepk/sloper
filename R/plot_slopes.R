@@ -8,7 +8,7 @@
 #' @param yname custom name for y-axis
 #' @param groupfactor factor/grouping variable (color and linetype)
 #' @param gflevels vector of custom labels for factor levels
-#' @param linear logical indicating whether to plot linear function or nonlinear
+#' @param linear logical argument indicating whether to plot linear function or nonlinear
 #' @return plot of the individual slopes and overall slope
 #' @examples
 #' # plot_slopes(sloper_exdat, rating = "strength_rating", contingency = "t_measured_strength",
