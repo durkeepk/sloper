@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_slopes.R
 \name{plot_slopes}
 \alias{plot_slopes}
-\title{Visualize rating-contingency slopes}
+\title{Visualize response-contingency slopes}
 \usage{
 plot_slopes(data = NULL, r_id = "r_id", response = "response",
   contingency = "contingency", xname = NULL, yname = NULL,
@@ -31,7 +31,7 @@ plot_slopes(data = NULL, r_id = "r_id", response = "response",
 plot of the individual slopes and overall slope
 }
 \description{
-Visualize rating-contingency slopes
+Visualize response-contingency slopes
 }
 \examples{
 # plot_slopes(sloper_exdat, response = "strength_rating", contingency = "t_measured_strength",

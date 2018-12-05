@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_slopes.R
 \name{get_slopes}
 \alias{get_slopes}
-\title{Extract rating-contingency slopes}
+\title{Extract response-contingency slopes}
 \usage{
 get_slopes(data = NULL, r_id = "r_id", t_id = "t_id",
   response = "response", contingency = "contingency",
@@ -26,7 +26,7 @@ New data frame containing individual slopes and intercepts representing
 the relationship between ratings and contingencies for each rater
 }
 \description{
-Extract rating-contingency slopes
+Extract response-contingency slopes
 }
 \examples{
 ## get_slopes(sloper_exdat, r_id = "r_id", t_id = "t_id",

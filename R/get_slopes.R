@@ -1,4 +1,4 @@
-#' Extract rating-contingency slopes
+#' Extract response-contingency slopes
 #'
 #' @param data data to use when fitting mixed model
 #' @param r_id column of rater idenitfiers

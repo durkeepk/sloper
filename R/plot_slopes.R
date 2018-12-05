@@ -1,4 +1,4 @@
-#' Visualize rating-contingency slopes
+#' Visualize response-contingency slopes
 #'
 #' @param data data to use for plotting
 #' @param r_id column of rater idenitfiers

@@ -1,6 +1,6 @@
 Package: sloper
 Type: Package
-Title: Compute, extract, and visualize rating-contingency slopes
+Title: Compute, extract, and visualize response-contingency slopes
 Version: 0.1.0
 Author: c(person("Patrick K.", "Durkee", role = c("aut", "cre"),
     email = "durkeepk@gmail.com")
