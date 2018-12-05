@@ -3,7 +3,7 @@
 \docType{data}
 \name{sloper_exdat}
 \alias{sloper_exdat}
-\title{Strength ratings of 66 men and rater characteristics}
+\title{Strength ratings of 66 men and rater/target characteristics}
 \format{A data frame with 12012 rows and 14 variables
 \describe{
 \item{t_id}{Target ID}

@@ -1,4 +1,4 @@
-#' Strength ratings of 66 men and rater characteristics
+#' Strength ratings of 66 men and rater/target characteristics
 #'
 #' Raters (N = 187) rated the strength of 66 target males and provided answers to a number of individual-differences questions
 #'
