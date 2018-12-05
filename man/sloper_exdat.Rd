@@ -28,4 +28,9 @@ sloper_exdat
 \description{
 Raters (N = 187) rated the strength of 66 target males and provided answers to a number of individual-differences questions
 }
+\details{
+Reference: Durkee, P. K., Goetz, A. T., & Lukaszewski, A. W. (2018).
+Formidability assessment mechanisms: Examining their speed and automaticity.
+Evolution and Human Behavior, 39(2), 170-178.
+}
 \keyword{datasets}
