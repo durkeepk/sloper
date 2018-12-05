@@ -4,7 +4,7 @@
 \alias{plot_slopes}
 \title{Visualize rating-contingency slopes}
 \usage{
-plot_slopes(data = NULL, r_id = "r_id", rating = "rating",
+plot_slopes(data = NULL, r_id = "r_id", response = "response",
   contingency = "contingency", xname = NULL, yname = NULL,
   groupfactor = NULL, gflevels = NULL, linear = T)
 }
@@ -13,7 +13,7 @@ plot_slopes(data = NULL, r_id = "r_id", rating = "rating",
 
 \item{r_id}{column of rater idenitfiers}
 
-\item{rating}{column of ratings (y-axis)}
+\item{response}{column of responses (y-axis)}
 
 \item{contingency}{column containing values that ratings are contingent on (x-axis)}
 
@@ -34,8 +34,8 @@ plot of the individual slopes and overall slope
 Visualize rating-contingency slopes
 }
 \examples{
-# plot_slopes(sloper_exdat, rating = "strength_rating", contingency = "t_measured_strength",
+# plot_slopes(sloper_exdat, response = "strength_rating", contingency = "t_measured_strength",
 #            yname = "Stregth Rating", xname = "Target Strength",
 #            groupfactor = "ratersex", linear = F, gflevels = c("Men", "Women"))
-# plot_slopes(sloper_exdat, rating = "strength_rating", contingency = "t_measured_strength")
+# plot_slopes(sloper_exdat, response = "strength_rating", contingency = "t_measured_strength")
 }

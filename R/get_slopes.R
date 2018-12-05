@@ -3,15 +3,15 @@
 #' @param data data to use when fitting mixed model
 #' @param r_id column of rater idenitfiers
 #' @param t_id column of target identifiers
-#' @param rating column of ratings
+#' @param response column of responses (e.g., ratings, scores)
 #' @param contingency column containing values that ratings are contingent on
 #' @param compress column to compress data by ('rater' or 'target'). Default is no compression
 #' @return New data frame containing individual slopes and intercepts representing
 #' the relationship between ratings and contingencies for each rater
 #' @examples
 #' ## get_slopes(sloper_exdat, r_id = "r_id", t_id = "t_id",
-#' ##           rating = "strength_rating", contingency = "target_strength_ave", compress = "rater")
-#' ## get_slopes(sloper_exdat, r_id , t_id , "strength_rating","target_strength_ave")
+#' ##           response = "strength_rating", contingency = "target_strength_ave", compress = "rater")
+#' ## get_slopes(sloper_exdat, "strength_rating","target_strength_ave")
 #' @importFrom dplyr group_by summarise_all funs
 #' @importFrom magrittr "%>%"
 #' @export
@@ -19,7 +19,7 @@
 get_slopes <- function(data = NULL,
                    r_id = 'r_id', # column identifying raters
                    t_id = 't_id', # column identifying varying targets or timepoints
-                   rating = "rating", # column of ratings or scores
+                   response = "response", # column of ratings or scores
                    contingency = "contingency", # column of rating contingencies
                    compress = NULL
                    ) {
@@ -29,12 +29,12 @@ get_slopes <- function(data = NULL,
   df <- data
   r_id <- df[[r_id]]
   t_id <- df[[t_id]]
-  rating <- df[[rating]]
+  response <- df[[response]]
   contingency <- df[[contingency]]
 
   # run the random-effects model and extract slopes
   message("Note: Mixed models can take a while to run.")
-  model <- lme4::lmer(rating ~ contingency + (contingency | r_id) + (contingency | t_id), data = df)
+  model <- lme4::lmer(response ~ contingency + (contingency | r_id) + (contingency | t_id), data = df)
   intercepts_slopes <- stats::coef(model)$r_id
   intercepts_slopes <- data.frame(intercepts_slopes, row.names = NULL)
   names(intercepts_slopes) <- c('intercept', 'slope')

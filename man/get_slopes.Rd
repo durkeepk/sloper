@@ -5,7 +5,8 @@
 \title{Extract rating-contingency slopes}
 \usage{
 get_slopes(data = NULL, r_id = "r_id", t_id = "t_id",
-  rating = "rating", contingency = "contingency", compress = NULL)
+  response = "response", contingency = "contingency",
+  compress = NULL)
 }
 \arguments{
 \item{data}{data to use when fitting mixed model}
@@ -14,7 +15,7 @@ get_slopes(data = NULL, r_id = "r_id", t_id = "t_id",
 
 \item{t_id}{column of target identifiers}
 
-\item{rating}{column of ratings}
+\item{response}{column of responses (e.g., ratings, scores)}
 
 \item{contingency}{column containing values that ratings are contingent on}
 
@@ -29,6 +30,6 @@ Extract rating-contingency slopes
 }
 \examples{
 ## get_slopes(sloper_exdat, r_id = "r_id", t_id = "t_id",
-##           rating = "strength_rating", contingency = "target_strength_ave", compress = "rater")
-## get_slopes(sloper_exdat, r_id , t_id , "strength_rating","target_strength_ave")
+##           response = "strength_rating", contingency = "target_strength_ave", compress = "rater")
+## get_slopes(sloper_exdat, "strength_rating","target_strength_ave")
 }
