@@ -12,7 +12,7 @@
 #' ## get_slopes(sloper_exdat, r_id = "r_id", t_id = "t_id",
 #' ##           response = "strength_rating", contingency = "target_strength_ave", compress = "rater")
 #' ## get_slopes(sloper_exdat, "strength_rating","target_strength_ave")
-#' @importFrom dplyr group_by summarise_all funs
+#' @import dplyr
 #' @importFrom magrittr "%>%"
 #' @export
 
