@@ -21,7 +21,7 @@ get_slopes <- function(data = NULL,
                    t_id = 't_id', # column identifying varying targets or timepoints
                    response = "response", # column of ratings or scores
                    contingency = "contingency", # column of rating contingencies
-                   compress = NULL
+                   compress = F
                    ) {
 
   # do this super annoying thing to get the actual variables
@@ -58,7 +58,7 @@ get_slopes <- function(data = NULL,
   return(flat_df_t)
   }
 
-  if(is.null(compress)){
+  if(compress == F){
     return(notflat)
     message("Success!")
     }

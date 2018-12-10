@@ -5,8 +5,7 @@
 \title{Extract response-contingency slopes}
 \usage{
 get_slopes(data = NULL, r_id = "r_id", t_id = "t_id",
-  response = "response", contingency = "contingency",
-  compress = NULL)
+  response = "response", contingency = "contingency", compress = F)
 }
 \arguments{
 \item{data}{data to use when fitting mixed model}
