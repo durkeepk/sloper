@@ -18,7 +18,7 @@ get_slopes(data = NULL, r_id = "r_id", t_id = "t_id",
 
 \item{contingency}{column containing values that ratings are contingent on}
 
-\item{compress}{column to compress data by ('rater' or 'target'). Default is no compression}
+\item{compress}{column to compress data by ('rater' or 'target'). Default is no compression.}
 }
 \value{
 New data frame containing individual slopes and intercepts representing

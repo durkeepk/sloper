@@ -5,7 +5,7 @@
 #' @param t_id column of target identifiers
 #' @param response column of responses (e.g., ratings, scores)
 #' @param contingency column containing values that ratings are contingent on
-#' @param compress column to compress data by ('rater' or 'target'). Default is no compression
+#' @param compress column to compress data by ('rater' or 'target'). Default is no compression.
 #' @return New data frame containing individual slopes and intercepts representing
 #' the relationship between ratings and contingencies for each rater
 #' @examples
@@ -34,16 +34,22 @@ get_slopes <- function(data = NULL,
 
   # run the random-effects model and extract slopes
   message("Note: Mixed models can take a while to run.")
-  model <- lme4::lmer(response ~ contingency + (contingency | r_id) + (contingency | t_id), data = df)
+  # model <- lme4::lmer(strength_rating ~ t_measured_strength +
+  #                       (t_measured_strength | r_id) +
+  #                       (t_measured_strength | t_id), data = sloper_exdat)
+  model <- lme4::lmer(response ~ contingency +
+                        (contingency | r_id) +
+                        (contingency | t_id), data = df)
   intercepts_slopes <- stats::coef(model)$r_id
-  intercepts_slopes <- data.frame(intercepts_slopes, row.names = NULL)
+  intercepts_slopes <- data.frame(intercepts_slopes)
   names(intercepts_slopes) <- c('intercept', 'slope')
-  notflat <- cbind(df1, intercepts_slopes)
+  intercepts_slopes$r_id <- rownames(intercepts_slopes)
+  notflat <- merge(df1, intercepts_slopes, by = 'r_id')
 
   if(compress == "rater"){
     flat_df_r <- notflat %>%
       dplyr::group_by(r_id) %>%
-      dplyr::summarise_all(funs(mean))
+      dplyr::summarise_all(list(mean))
   flat_df_r <- flat_df_r[grep("t_", colnames(flat_df_r), invert = TRUE)]
   message("Success!")
   return(flat_df_r)
@@ -52,7 +58,7 @@ get_slopes <- function(data = NULL,
   if(compress == "target"){
     flat_df_t <- notflat %>%
       dplyr::group_by(t_id) %>%
-      dplyr::summarise_all(funs(mean))
+      dplyr::summarise_all(list(mean))
   flat_df_t <- flat_df_t[grep("r_", colnames(flat_df_t), invert = TRUE)]
   message("Success!")
   return(flat_df_t)
