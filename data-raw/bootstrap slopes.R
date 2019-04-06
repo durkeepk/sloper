@@ -1,5 +1,4 @@
 library(sloper)
-
 library(data.table)
 library(tidyverse)
 
@@ -14,14 +13,18 @@ target_IDs <- "t_id"
 
 N_ratings <- length(unique(df[,target_IDs]))
 
-#https://stats.stackexchange.com/questions/111686/choosing-one-pair-randomly-from-repeated-pairs
+
 boot_data <- data.frame(data.table(df)
                         [,.SD[sample(1:.N, N_ratings, replace = T),],
                           by = rater_IDs, ])
 
-int_slope <- sloper::get_slopes(boot_data,
+int_slope <- get_slopes(boot_data,
                                 response = "strength_rating",
                                 contingency = "t_measured_strength",
                                 compress = "rater", maximal = T)
 
-merge()
+merged_data <- sloper_exdat %>%
+  select(r_id, rater_formidability, rater_grip_strength, ratersex) %>%
+  full_join(int_slope, by = "r_id") %>% unique()
+
+summary(lm(slope ~ rater_formidability, data = merged_data))

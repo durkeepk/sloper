@@ -59,8 +59,9 @@ get_slopes <- function(data = NULL,
   if(compress == "rater"){
     final_data <- notflat %>%
       dplyr::group_by(r_id) %>%
+      #dplyr::select(-t_id) %>%
       dplyr::summarise_all(list(mean))
-    #final_data <- final_data[grep("t_", colnames(final_data), invert = TRUE)]
+    final_data <- final_data[grep("t_", colnames(final_data), invert = TRUE)]
   message("Success!")
   }
 
@@ -68,7 +69,7 @@ get_slopes <- function(data = NULL,
     final_data <- notflat %>%
       dplyr::group_by(t_id) %>%
       dplyr::summarise_all(list(mean))
-    #final_data <- final_data[grep("r_", colnames(final_data), invert = TRUE)]
+    final_data <- final_data[grep("r_", colnames(final_data), invert = TRUE)]
   message("Success!")
   }
 
