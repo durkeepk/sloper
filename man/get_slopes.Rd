@@ -5,24 +5,29 @@
 \title{Extract response-contingency slopes}
 \usage{
 get_slopes(data = NULL, r_id = "r_id", t_id = "t_id",
-  response = "response", contingency = "contingency", compress = F)
+  response = "response", contingency = "contingency",
+  compress = "none", maximal = T)
 }
 \arguments{
-\item{data}{data to use when fitting mixed model}
+\item{data}{data to use when fitting mixed model.}
 
-\item{r_id}{column of rater idenitfiers}
+\item{r_id}{column of rater idenitfiers.}
 
-\item{t_id}{column of target identifiers}
+\item{t_id}{column of target identifiers.}
 
 \item{response}{column of responses (e.g., ratings, scores)}
 
 \item{contingency}{column containing values that ratings are contingent on}
 
-\item{compress}{column to compress data by ('rater' or 'target'). Default is no compression.}
+\item{compress}{column to compress data by ('rater' or 'target').
+Default is no compression.}
+
+\item{maximal}{Should random slopes be specified for both targets and raters [T]
+or just targets [F].}
 }
 \value{
 New data frame containing individual slopes and intercepts representing
-the relationship between ratings and contingencies for each rater
+the relationship between ratings and contingencies for each rater.
 }
 \description{
 Extract response-contingency slopes
